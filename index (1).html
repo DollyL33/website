@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dolly Lokhandwala, CFE — data analyst working in business intelligence, process automation and fraud analytics.">
+<title>Dolly Lokhandwala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@400;500;600&display=swap">
+<style>
+/* Layout: sticky underline nav; one column of sections; hero = intro left, at-a-glance panel right. Orange for action, yellow as a quiet marker. */
+:root{
+  --bg:#FFFEF9; --surface:#FFFFFF; --soft:#FFF4DA; --ink:#1E1A16; --muted:#5F574F;
+  --line:#E8E1D5; --orange:#C4500B; --yellow:#F2B324; --on-accent:#FFFFFF;
+  --shadow:0 1px 2px rgba(30,26,22,.04),0 8px 24px -12px rgba(30,26,22,.12);
+  --display:"Cormorant Garamond",Garamond,Georgia,serif;
+  --body:"Lora",Georgia,"Times New Roman",serif;
+  --ui:"Outfit",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:var(--ui);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141210; --surface:#1C1916; --soft:#2A2317; --ink:#F3EEE7; --muted:#B4AA9C;
+  --line:#2F2A24; --orange:#FF8A3D; --yellow:#F5C04A; --on-accent:#1A1206;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.5); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141210; --surface:#1C1916; --soft:#2A2317; --ink:#F3EEE7; --muted:#B4AA9C;
+  --line:#2F2A24; --orange:#FF8A3D; --yellow:#F5C04A; --on-accent:#1A1206;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.5); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--body);margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.1;text-wrap:balance;margin:0;letter-spacing:0}
+a{color:var(--orange)}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:28px;min-height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex-shrink:0}
+.mono-mark{width:34px;height:34px;border-radius:8px;background:var(--orange);color:var(--on-accent);display:grid;place-items:center;font:600 1.1rem var(--display);letter-spacing:.02em}
+.logo-name{font:600 .95rem var(--ui);text-transform:uppercase;letter-spacing:.12em}
+nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;justify-content:flex-end;align-self:stretch}
+nav::-webkit-scrollbar{display:none}
+.tab{position:relative;display:flex;align-items:center;text-decoration:none;color:var(--muted);font:500 .78rem var(--ui);letter-spacing:.08em;text-transform:uppercase;padding:0 10px;white-space:nowrap}
+.tab:hover{color:var(--ink)}
+.tab::after{content:"";position:absolute;left:10px;right:10px;bottom:-1px;height:2px;background:var(--orange);transform:scaleX(0);transition:transform .2s}
+.tab.active{color:var(--ink)}
+.tab.active::after{transform:scaleX(1)}
+
+main{padding-block:56px 24px}
+.sec{scroll-margin-top:88px;padding-block:72px;border-top:1px solid var(--line)}
+.sec:first-child{border-top:0;padding-top:8px}
+
+.eyebrow{display:flex;align-items:center;gap:10px;font:600 .8rem var(--ui);letter-spacing:.2em;text-transform:uppercase;color:var(--orange)}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--yellow)}
+.page-head{display:grid;gap:12px;margin-bottom:36px;max-width:62ch}
+.page-head h2{font-size:clamp(2.3rem,5vw,3.2rem);font-weight:500}
+.page-head p{color:var(--muted);margin:0;font-size:1.05rem}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr);max-width:780px}
+.hero h1{font-size:clamp(2.9rem,13vw,6.4rem);overflow-wrap:anywhere;font-weight:500;line-height:1;margin:22px 0 22px}
+.hero h1 .first{display:block;color:var(--ink)}
+.hero h1 .last{display:block;font-style:italic;color:var(--orange)}
+.hero .lede{font-size:1.14rem;line-height:1.8;color:var(--muted);max-width:56ch;margin:0 0 34px}
+.stats{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:20px 36px}
+@media (max-width:560px){.stats{grid-template-columns:repeat(2,auto)}}
+.stats b{display:block;font:500 2.6rem/1 var(--display);color:var(--orange);font-variant-numeric:oldstyle-nums}
+.stats span{display:block;margin-top:6px;font:500 .74rem var(--ui);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:4px;font:500 .95rem var(--ui);letter-spacing:.04em;text-decoration:none;border:1px solid var(--orange);color:var(--orange);background:transparent;cursor:pointer;transition:background .2s,box-shadow .2s}
+.btn:hover{background:var(--soft)}
+.btn.primary{background:var(--orange);border-color:var(--orange);color:var(--on-accent)}
+.btn.primary:hover{box-shadow:var(--shadow);filter:brightness(1.05)}
+
+.section-title{margin:64px 0 24px}
+.section-title h3{font-size:2rem;font-weight:500}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .2s,box-shadow .2s}
+.card:hover{border-color:color-mix(in srgb,var(--orange) 45%,var(--line));box-shadow:var(--shadow)}
+.card h4{font-size:1.45rem;line-height:1.2}
+.card p{margin:0;color:var(--muted);font-size:.96rem}
+.impact{align-self:flex-start;font:500 .8rem var(--ui);color:var(--ink);background:var(--soft);border-radius:6px;padding:4px 10px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:10px}
+.tag{font:500 .72rem var(--mono);padding:4px 9px;border-radius:5px;border:1px solid var(--line);color:var(--muted);background:var(--bg)}
+.meta{font:500 .74rem var(--mono);color:var(--orange);letter-spacing:.08em;text-transform:uppercase}
+
+/* Timeline */
+.timeline{display:grid;border-left:1px solid var(--line);margin-left:6px}
+.t-item{position:relative;padding:0 0 36px 30px;display:grid;gap:6px}
+.t-item:last-child{padding-bottom:0}
+.t-item::before{content:"";position:absolute;left:-6px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--orange)}
+.t-item h4{font-size:1.45rem}
+.t-item .org{font-family:var(--ui);font-weight:500;color:var(--ink);font-size:.98rem}
+.t-item p{margin:0;color:var(--muted);max-width:70ch}
+
+/* Research */
+.pubs{display:grid;border-top:1px solid var(--line)}
+.pub{display:grid;grid-template-columns:90px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.pub .yr{font:500 .8rem var(--mono);color:var(--orange);letter-spacing:.08em;padding-top:4px}
+.pub h4{font-size:1.4rem;margin-bottom:6px}
+.pub p{margin:0;color:var(--muted);font-size:.96rem}
+.areas{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.areas span{padding:7px 14px;border-radius:6px;background:var(--soft);font:500 .88rem var(--ui)}
+
+/* About */
+.about{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:56px;align-items:start}
+.about p{margin:0 0 16px;max-width:64ch}
+.side{display:grid;gap:22px}
+.facts{display:grid;gap:0;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.facts li{display:grid;gap:2px;padding:14px 0;border-bottom:1px solid var(--line)}
+.facts b{font:500 .72rem var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:6px}
+.side-label{font:500 .72rem var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:10px}
+
+.contact-cta{scroll-margin-top:88px;margin-top:80px;padding:56px 28px;border-radius:16px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;justify-items:center;text-align:center;gap:14px;position:relative;overflow:hidden}
+.contact-cta::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--yellow),var(--orange))}
+.contact-cta .eyebrow::before{display:none}
+.contact-cta h2{font-size:clamp(2.6rem,6vw,4rem);font-weight:500}
+.contact-cta p{max-width:56ch;color:var(--muted);font-size:1.08rem;margin:0}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:14px;max-width:100%}
+.cta-btns .btn{padding:14px 24px;max-width:100%}
+.cta-btns .btn span{overflow-wrap:anywhere;min-width:0;font-size:clamp(.82rem,3.4vw,.98rem)}
+
+.showcase{margin-top:24px}
+.post-feature{display:grid;gap:10px;padding:32px;margin-bottom:24px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:12px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:border-color .2s}
+.post-feature:hover{border-color:var(--orange)}
+.post-feature h3{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:500}
+.post-feature p{margin:0;color:var(--muted);max-width:64ch}
+.post-feature .read{font:500 .9rem var(--ui);letter-spacing:.04em;color:var(--orange)}
+.empty{border:1px dashed var(--line);border-radius:12px;padding:28px;display:grid;gap:6px;background:var(--surface)}
+.empty h4{font-size:1.4rem}
+.empty p{margin:0;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--orange)}
+
+@media (max-width:1180px){.logo-name{display:none}}
+@media (max-width:860px){
+  .hero,.about{grid-template-columns:minmax(0,1fr);gap:48px}
+  .logo-name{display:none}
+  .bar{gap:12px}
+  nav{justify-content:flex-start}
+}
+@media (max-width:560px){
+  .pub{grid-template-columns:1fr;gap:4px}
+  .wrap{padding-inline:18px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#home" data-go="home"><span class="mono-mark">DL</span><span class="logo-name">Dolly Lokhandwala</span></a>
+    <nav aria-label="Site sections">
+      <a class="tab" href="#home" data-tab="home">Home</a>
+      <a class="tab" href="#about" data-tab="about">About &amp; Contact</a>
+      <a class="tab" href="#projects" data-tab="projects">Projects</a>
+      <a class="tab" href="#conferences" data-tab="conferences">Conferences</a>
+      <a class="tab" href="#blogs" data-tab="blogs">Blogs</a>
+      <a class="tab" href="#research" data-tab="research">Research</a>
+      <a class="tab" href="#achievements" data-tab="achievements">Achievements</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HOME -->
+  <section class="sec" id="home">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Builder · Learner · Future Founder</div>
+        <h1><span class="first">Dolly</span><span class="last">Lokhandwala</span></h1>
+        <p class="lede">MBA-trained data analyst with 5+ years across government data, financial analytics and audit. I build Power BI dashboards, ETL pipelines and automated workflows that give finance, compliance and legal teams clear, reliable answers. Next, I'm building toward a startup of my own.</p>
+        <div class="stats">
+          <div><b>5+</b><span>Years experience</span></div>
+          <div><b>85%</b><span>Manual work cut</span></div>
+          <div><b>$50K+</b><span>Audit savings</span></div>
+          <div><b>CFE</b><span>Certified 2026</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & CONTACT -->
+  <section class="sec" id="about">
+    <div class="about">
+      <div>
+        <div class="page-head"><div class="eyebrow">About me</div><h2>From audit files to automated dashboards</h2></div>
+        <p>I'm Dolly Lokhandwala, a data analyst and Certified Fraud Examiner. I began my career in audit and tax in Mumbai, testing internal controls and tracing fraud in bank loans, cash handling and contracts. That work taught me that numbers always tell a story if you know where to look.</p>
+        <p>Today I work in public-sector technology, building Power BI reporting, Power Platform and UiPath automations, and data models for finance, timekeeping, legal and compliance teams. I enjoy the full cycle: gathering requirements, preparing the data, building the solution, and supporting the people who rely on it.</p>
+      </div>
+      <div class="side">
+        <ul class="facts">
+          <li><b>Education</b><span>MBA, Business Analytics (STEM), Pace University</span></li>
+          <li><b>Credential</b><span>Certified Fraud Examiner (ACFE)</span></li>
+          <li><b>Focus</b><span>BI, automation, fraud and risk analytics</span></li>
+        </ul>
+        <div>
+          <div class="side-label">Tools</div>
+          <div class="skills">
+            <span class="tag">Power BI · DAX</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">R</span><span class="tag">Tableau</span><span class="tag">Snowflake</span><span class="tag">UiPath</span><span class="tag">Power Automate</span><span class="tag">Power Apps</span><span class="tag">Airflow</span><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">SAP</span><span class="tag">Excel · VBA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title"><div class="eyebrow">Experience</div><h3 style="margin-top:10px">Professional experience</h3></div>
+    <div class="timeline">
+      <div class="t-item"><div class="meta">2026 – PRESENT · NEW YORK</div><h4>Business System Analyst</h4><div class="org">NYC School Construction Authority</div><p>Power Platform and UiPath automations for compliance-critical workflows, Power BI dashboards and paginated reports, requirements and process mapping that cut manual processing time by 65%.</p></div>
+      <div class="t-item"><div class="meta">JUN 2024 – 2026 · STATEN ISLAND</div><h4>Associate Analyst</h4><div class="org">Finance, Budget &amp; Timekeeping, MTA Staten Island Railway</div><p>Power BI models with DAX, SQL and Python on labor cost and overtime; payroll and absence automation with Power Automate (85% less manual work); Power Apps workforce reporting; a quarterly Risk Control Matrix that halved control weaknesses.</p></div>
+      <div class="t-item"><div class="meta">JUN 2023 – MAY 2024 · STATEN ISLAND</div><h4>Business Intelligence Intern</h4><div class="org">Timekeeping, MTA Staten Island Railway</div><p>Rebuilt sick-absence reporting into one Power BI dashboard, built an audit dashboard for timekeeping claim errors, and automated reports with VBA and Power Query.</p></div>
+      <div class="t-item"><div class="meta">DEC 2020 – JUL 2022 · MUMBAI</div><h4>Senior Risk Analyst</h4><div class="org">Internal Audit &amp; Risk Consulting, Mahajan and Aibara LLP</div><p>SOX-compliant audits across P2P, O2C, Treasury and Manufacturing; control gap analysis with Excel and SAP data delivering $50K+ in savings; forensic accounting on transactions and contracts.</p></div>
+      <div class="t-item"><div class="meta">FEB 2016 – FEB 2019 · MUMBAI</div><h4>Audit Assurance &amp; Tax Intern</h4><div class="org">Yardi Prabhu and Associates LLP</div><p>Statutory and concurrent audits of co-operative banks, detecting income leakage and loan fraud; Excel risk-scoring for investment audits; tax audit reports and filings.</p></div>
+    </div>
+    <div class="contact-cta" id="contact">
+      <div class="eyebrow">Contact</div>
+      <h2>Get in Touch</h2>
+      <p>Looking for a data analyst, a BI dashboard or help automating a process? I'm always happy to talk about analytics, fraud examination and automation work.</p>
+      <div class="cta-btns">
+        <a class="btn primary js-email" href="#contact"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="js-email-text">lokhandwala.dolly33 [at] yahoo.com</span></a>
+        <a class="btn" href="https://www.linkedin.com/in/dolly-lokhandwala-cfe-268753131/" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg><span>LinkedIn Profile</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="sec" id="projects">
+    <div class="page-head"><div class="eyebrow">Projects</div><h2>Selected projects</h2><p>Dashboards, automations and data systems from my work in public-sector finance, timekeeping and audit.</p></div>
+    <div class="grid" id="project-grid"></div>
+    <a class="post-feature showcase" href="https://mavenshowcase.com/profile/a8d103e0-5031-70b1-c52d-5408c6bbd6db" target="_blank" rel="noopener noreferrer">
+      <div class="meta">Dashboard portfolio · Maven Showcase</div>
+      <h3>See my interactive dashboards</h3>
+      <p>A collection of my data visualization and dashboard projects, hosted on Maven Showcase.</p>
+      <span class="read">View dashboards →</span>
+    </a>
+  </section>
+
+  <!-- CONFERENCES -->
+  <section class="sec" id="conferences">
+    <div class="page-head"><div class="eyebrow">Conferences</div><h2>Talks &amp; events</h2><p>Conferences, talks and events I take part in.</p></div>
+    <div class="empty">
+      <h4>Coming soon</h4>
+      <p>Talks, panels and conferences will be listed here.</p>
+    </div>
+  </section>
+
+  <!-- BLOGS -->
+  <section class="sec" id="blogs">
+    <div class="page-head"><div class="eyebrow">Blog</div><h2>Writing</h2><p>Writing on data, fraud analytics and automation.</p></div>
+    <a class="post-feature" href="https://www.acfe.com/acfe-insights-blog/blog-detail?s=data-visualization-better-decisions" target="_blank" rel="noopener noreferrer">
+      <div class="meta">Published · ACFE Insights Blog · August 2026</div>
+      <h3>Data Visualization That Drives Better Decisions</h3>
+      <p>A transit case study on turning raw attendance data into dashboards, and how making patterns visible helped reduce absenteeism and supported earlier, fairer intervention.</p>
+      <span class="read">Read on ACFE.com →</span>
+    </a>
+    <div class="grid" id="blog-grid"></div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="sec" id="research">
+    <div class="page-head"><div class="eyebrow">Research</div><h2>Research &amp; analysis</h2><p>Where analytics, fraud examination and public data meet.</p></div>
+    <div class="areas"><span>Fraud &amp; anomaly detection</span><span>Predictive analytics</span><span>Public-sector data</span><span>Internal controls</span></div>
+    <div class="pubs">
+      <div class="pub"><div class="yr">MBA</div><div><h4>Predictive modeling competition in R</h4><p>Built Random Forest, ensemble and XGBoost models on 50,000 observations and 46 variables, reaching 91.35% accuracy and ranking in the top 10. · <i>Pace University</i></p></div></div>
+      <div class="pub"><div class="yr">MBA</div><div><h4>Electricity outage patterns and community impact</h4><p>Tableau analysis of outage data to measure community impact and find grid weak points, told as a data story for public policy audiences. · <i>Pace University</i></p></div></div>
+      <div class="pub"><div class="yr">2023</div><div><h4>Fraud and error trends in timekeeping claims</h4><p>Sampling-based audit analytics on exception claim forms, surfacing fraud and error patterns across departments. · <i>MTA Staten Island Railway</i></p></div></div>
+      <div class="pub"><div class="yr">2021</div><div><h4>Forensic review of financial transactions and contracts</h4><p>Forensic accounting techniques applied to transaction, contract and SAP data to detect fraud and control gaps. · <i>Mahajan and Aibara LLP</i></p></div></div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="sec" id="achievements">
+    <div class="page-head"><div class="eyebrow">Achievements</div><h2>Credentials &amp; recognition</h2><p>Certifications, degrees and academic honors.</p></div>
+    <div class="grid">
+      <div class="card"><div class="meta">2026 · PUBLICATION</div><h4>Published on ACFE Insights</h4><p>Author of "Data Visualization That Drives Better Decisions" on the ACFE Insights Blog.</p></div>
+      <div class="card"><div class="meta">2026 · CERTIFICATION</div><h4>Certified Fraud Examiner (CFE)</h4><p>Credential from the Association of Certified Fraud Examiners (ACFE).</p></div>
+      <div class="card"><div class="meta">2024 · DEGREE</div><h4>MBA, Business Analytics (STEM)</h4><p>Pace University, Lubin School of Business. GPA 3.60.</p></div>
+      <div class="card"><div class="meta">MBA · COMPETITION</div><h4>Top 10, R Predictive Analytics</h4><p>91.35% accuracy with Random Forest, ensemble and XGBoost models.</p></div>
+      <div class="card"><div class="meta">MBA · LEADERSHIP</div><h4>Beta Alpha Psi, Chair of Special Events</h4><p>Designed and ran an Excel training program for graduate students.</p></div>
+      <div class="card"><div class="meta">2020 · DEGREE</div><h4>Master of Commerce</h4><p>Advanced Financial Accounting, University of Mumbai. GPA 3.70.</p></div>
+      <div class="card"><div class="meta">2017 · CERTIFICATION</div><h4>Chartered Accountancy, Inter Level</h4><p>ICAI, comparable to the intermediate stage of the US CPA path.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Dolly Lokhandwala</span><span><a class="js-email" href="#contact">Email</a> · <a href="https://mavenshowcase.com/profile/a8d103e0-5031-70b1-c52d-5408c6bbd6db" target="_blank" rel="noopener noreferrer">Dashboards</a> · <a href="https://www.linkedin.com/in/dolly-lokhandwala-cfe-268753131/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span></div></footer>
+
+<script>
+const projects=[
+  {t:"Timekeeping Audit Dashboard",i:"Fraud & error trends surfaced",d:"Power BI dashboard tracking exception claim errors with Excel sampling, revealing fraud and error patterns across departments.",tags:["Power BI","Audit","Fraud"]},
+  {t:"Payroll & Absence Automation",i:"85% less manual processing",d:"Power Automate flows for payroll and absence tracking, improving transparency of workforce compliance data across union departments.",tags:["Power Automate","Payroll"]},
+  {t:"Sick Absence Reporting Hub",i:"85% less manual audit effort",d:"Replaced a fragmented reporting process with a centralized Power BI dashboard and Report Builder.",tags:["Power BI","Report Builder"]},
+  {t:"Labor Cost & Overtime Analytics",i:"Data-driven Finance & HR decisions",d:"Semantic models in DAX, Power Query, SQL and Python showing labor cost trends, overtime patterns and workforce anomalies.",tags:["DAX","SQL","Python"]},
+  {t:"Workforce Reporting App",i:"Centralized data governance",d:"Power Apps input system and data architecture for centralized workforce reporting across departments.",tags:["Power Apps","Data Governance"]},
+  {t:"Accounts Receivable Risk Control Matrix",i:"50% fewer control weaknesses",d:"Quarterly control matrix and testing scripts built on SharePoint workflows, strengthening compliance and accountability.",tags:["SharePoint","Internal Controls"]},
+  {t:"Process Improvement & Automation",i:"65% less manual processing",d:"Mapped current-state processes and delivered UiPath and Power Platform automations for compliance-critical workflows.",tags:["UiPath","Power Platform"]}
+];
+const blogs=[
+  {m:"COMING SOON",t:"What fraud examiners look for in timekeeping data",d:"Red flags I learned to spot in payroll and absence records."},
+  {m:"COMING SOON",t:"From Excel macros to Power Automate",d:"How I moved routine reports from manual work to automated flows."},
+  {m:"COMING SOON",t:"From audit to analytics",d:"What an audit background brings to data and BI work."}
+];
+const card=p=>`<article class="card"><span class="impact">${p.i}</span><h4>${p.t}</h4><p>${p.d}</p><div class="tags">${p.tags.map(x=>`<span class="tag">${x}</span>`).join("")}</div></article>`;
+document.getElementById("project-grid").innerHTML=projects.map(card).join("");
+document.getElementById("blog-grid").innerHTML=blogs.map(b=>`<article class="card"><div class="meta">${b.m}</div><h4>${b.t}</h4><p>${b.d}</p></article>`).join("");
+
+const tabs=[...document.querySelectorAll(".tab")];
+const secs=tabs.map(t=>document.getElementById(t.dataset.tab));
+function mark(id){tabs.forEach(t=>{const on=t.dataset.tab===id;t.classList.toggle("active",on);if(on){t.setAttribute("aria-current","true");t.scrollIntoView({block:"nearest",inline:"nearest"})}else t.removeAttribute("aria-current")})}
+function go(id){const el=document.getElementById(id);if(!el)return;el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});mark(id);try{history.replaceState(null,"","#"+id)}catch(e){}}
+document.querySelectorAll("[data-go],.tab").forEach(b=>b.addEventListener("click",e=>{e.preventDefault();go(b.dataset.go||b.dataset.tab)}));
+function spy(){const y=innerHeight*0.3;let cur=secs[0].id;for(const s of secs){if(s.getBoundingClientRect().top<=y)cur=s.id}
+ if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur=secs[secs.length-1].id;mark(cur)}
+addEventListener("scroll",spy,{passive:true});
+if(location.hash&&document.getElementById(location.hash.slice(1)))setTimeout(()=>go(location.hash.slice(1)),50);else spy();
+
+// Email: assembled here so spam bots that scan page text can't easily read it
+(function(){const user="lokhandwala.dolly33",domain="yahoo.com",addr=user+"@"+domain;
+ document.querySelectorAll(".js-email").forEach(a=>{a.href="mailto:"+addr});
+ document.querySelectorAll(".js-email-text").forEach(t=>{t.textContent=addr})})();
+</script>
+</body>
+</html>
